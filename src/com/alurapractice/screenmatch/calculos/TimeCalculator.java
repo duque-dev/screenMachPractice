@@ -1,6 +1,4 @@
 package com.alurapractice.screenmatch.calculos;
-import com.alurapractice.screenmatch.modelos.Movie;
-import com.alurapractice.screenmatch.modelos.Serie;
 import com.alurapractice.screenmatch.modelos.Title;
 
 public class TimeCalculator {
