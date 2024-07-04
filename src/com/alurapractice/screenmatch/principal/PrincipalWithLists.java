@@ -5,7 +5,6 @@ import com.alurapractice.screenmatch.modelos.Serie;
 import com.alurapractice.screenmatch.modelos.Title;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class PrincipalWithLists {
