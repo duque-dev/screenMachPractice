@@ -1,6 +1,6 @@
 package com.alurapractice.screenmatch.modelos;
 
-public class Title {
+public class Title implements Comparable<Title>{
     private String name;
     private int releaseDate;
     private boolean includedInSuscription;
@@ -69,11 +69,12 @@ public class Title {
     public void showsInformation() {
     }
 
-    public int totalDurationInMinutes(){
+    public int getDurationInMinutes(){
         return 0;
     }
 
-    public int getDurationInMinutes(){
-        return 0;
+    @Override
+    public int compareTo(Title oterTitle) {
+        return this.getName().compareTo(oterTitle.getName()) ;
     }
 }
