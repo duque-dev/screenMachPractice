@@ -3,7 +3,6 @@ package com.alurapractice.screenmatch.modelos;
 public class Title {
     private String name;
     private int releaseDate;
-    private int durationInMinutes;
     private boolean includedInSuscription;
     private double scoreSum;
     private int totalScoreReview;
@@ -26,13 +25,6 @@ public class Title {
         this.releaseDate = releaseDate;
     }
 
-    public int getDurationInMinutes() {
-        return durationInMinutes;
-    }
-
-    public void setDurationInMinutes(int durationInMinutes) {
-        this.durationInMinutes = durationInMinutes;
-    }
 
     public boolean isIncludedInSuscription() {
         return includedInSuscription;
@@ -58,21 +50,30 @@ public class Title {
         this.totalScoreReview = totalScoreReview;
     }
 
-
-    //methods
-    public void showsMovieInformation(){
-        System.out.println("Nombre de la pelicula es: " + name);
-        System.out.println("Fecha de lanzamiento: " + releaseDate);
-        System.out.println("Dureación en minutos: " + getDurationInMinutes());
+    public Title(String name, int releaseDate, boolean includedInSuscription) {
+        this.name = name;
+        this.releaseDate = releaseDate;
+        this.includedInSuscription = includedInSuscription;
     }
 
-    public void movieScore(double score){
+    //methods
+    public void titleScore(double score){
         scoreSum += score;
         totalScoreReview++;
     }
 
-    public double movieAverage(){
+    public double titleAverage(){
         return scoreSum/totalScoreReview;
     }
 
+    public void showsInformation() {
+    }
+
+    public int totalDurationInMinutes(){
+        return 0;
+    }
+
+    public int getDurationInMinutes(){
+        return 0;
+    }
 }

@@ -2,32 +2,26 @@ import com.alurapractice.screenmatch.calculos.SuggestionFilter;
 import com.alurapractice.screenmatch.calculos.TimeCalculator;
 import com.alurapractice.screenmatch.modelos.Movie;
 import com.alurapractice.screenmatch.modelos.Serie;
+import com.alurapractice.screenmatch.modelos.Title;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        Movie myMovie1 = new Movie();
-        myMovie1.setDirector("Peter Jackson");
-        myMovie1.setName("The Hobbit: An Unexpected Journey");
-        myMovie1.setReleaseDate(2012);
-        myMovie1.setDurationInMinutes(169);
-        myMovie1.setIncludedInSuscription(true);
+        Movie myMovie1 = new Movie("The Hobbit: An Unexpected Journey",2012,169,true,"Peter Jackson");
 
-        myMovie1.showsMovieInformation();
-        myMovie1.movieScore(10);
-        myMovie1.movieScore(3.0);
+        myMovie1.showsInformation();
+        myMovie1.titleScore(10);
+        myMovie1.titleScore(3.0);
         System.out.println(myMovie1.getScoreSum());
         System.out.println(myMovie1.getTotalScoreReview());
-        System.out.println(myMovie1.movieAverage());
+        System.out.println(myMovie1.titleAverage());
 
-        Serie friends = new Serie();
-        friends.setName("Friends");
-        friends.setReleaseDate(1995);
-        friends.setSeasons(11);
-        friends.setMinutePerEpisode(30);
-        friends.setEpisodesPerSeason(10);
+        Serie friends = new Serie("Friends",1995,true,11,10,30);
+
         friends.getDurationInMinutes();
-        friends.showsMovieInformation();
+        friends.showsInformation();
 
         TimeCalculator calculator = new TimeCalculator();
         calculator.maratonList(myMovie1);
@@ -36,6 +30,15 @@ public class Main {
 
         SuggestionFilter filter = new SuggestionFilter();
         filter.filter(myMovie1);
-        System.out.println(filter);
+
+        ArrayList<Title> movieArrayList = new ArrayList<>();
+        movieArrayList.add(myMovie1);
+        movieArrayList.add(friends);
+        System.out.println(movieArrayList.size());
+        System.out.println(movieArrayList);//*****************************
+        System.out.println(movieArrayList.get(0).getName());
+
+
     }
+
 }
