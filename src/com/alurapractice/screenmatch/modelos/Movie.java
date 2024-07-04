@@ -1,6 +1,8 @@
 package com.alurapractice.screenmatch.modelos;
 
-public class Movie extends Title{
+import com.alurapractice.screenmatch.calculos.Review;
+
+public class Movie extends Title implements Review {
     private String director;
 
     public String getDirector() {
@@ -9,5 +11,10 @@ public class Movie extends Title{
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getReview() {
+        return (int) movieAverage()/2;
     }
 }

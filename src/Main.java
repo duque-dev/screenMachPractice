@@ -1,3 +1,4 @@
+import com.alurapractice.screenmatch.calculos.SuggestionFilter;
 import com.alurapractice.screenmatch.calculos.TimeCalculator;
 import com.alurapractice.screenmatch.modelos.Movie;
 import com.alurapractice.screenmatch.modelos.Serie;
@@ -33,5 +34,8 @@ public class Main {
         calculator.maratonList(friends);
         System.out.println(calculator.getTotalTime());
 
+        SuggestionFilter filter = new SuggestionFilter();
+        filter.filter(myMovie1);
+        System.out.println(filter);
     }
 }
