@@ -33,7 +33,7 @@ public class Episodes implements Review {
     }
 
     @Override
-    public int getReview() {
+    public double getReview() {
         if(totalViews > 100){
             return 4;
         }else {

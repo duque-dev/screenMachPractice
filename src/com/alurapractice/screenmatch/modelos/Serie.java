@@ -1,13 +1,17 @@
 package com.alurapractice.screenmatch.modelos;
 
-public class Serie extends Title{
+import com.alurapractice.screenmatch.calculos.Review;
+
+public class Serie extends Title implements Review {
     private int seasons;
     private int episodesPerSeason;
     private int minutePerEpisode;
 
-    @Override
-    public int getDurationInMinutes(){
-        return seasons * episodesPerSeason * minutePerEpisode;
+    public Serie(String name, int releaseDate, boolean includedInSuscription, int seasons, int episodesPerSeason, int minutePerEpisode) {
+        super(name, releaseDate, includedInSuscription);
+        this.seasons = seasons;
+        this.episodesPerSeason = episodesPerSeason;
+        this.minutePerEpisode = minutePerEpisode;
     }
 
     public int getSeasons() {
@@ -32,5 +36,24 @@ public class Serie extends Title{
 
     public void setMinutePerEpisode(int minutePerEpisode) {
         this.minutePerEpisode = minutePerEpisode;
+    }
+
+    @Override
+    public int getDurationInMinutes(){
+        return seasons * episodesPerSeason * minutePerEpisode;
+    }
+    @Override
+    public String toString() {
+        return "Serie: " + this.getName() + "Release date: " + this.getReleaseDate();
+    }
+    @Override
+    public void showsInformation(){
+        System.out.println("Nombre de la serie es: " + getName());
+        System.out.println("Fecha de lanzamiento: " + getReleaseDate());
+        System.out.println("Duración en minutos: " + this.getDurationInMinutes());
+    }
+    @Override
+    public double getReview() {
+        return (double) titleAverage()/2;
     }
 }
