@@ -7,6 +7,17 @@ public class Title implements Comparable<Title>{
     private double scoreSum;
     private int totalScoreReview;
 
+    public Title(TitleDTO myTitleDTO) {
+        this.name = myTitleDTO.title();
+        this.releaseDate = Integer.valueOf(myTitleDTO.year());
+//        if (myTitleDTO.runtime().contains("N/A")){
+//            throw new ErrorEnConversionDeDuracionException("No pude convertir la duracion," +
+//                    "porque contiene un N/A");
+//        }
+//        this.getDurationInMinutes() = Integer.valueOf(
+//                myTitleDTO.runtime().substring(0,3).replace(" ","")
+//        );
+    }
 
     //getters and setters
     public String getName() {
